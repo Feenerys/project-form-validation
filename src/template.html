@@ -10,23 +10,33 @@
       <h1>Form</h1>
       <div class="input-line">
         <label for="email">Email:</label>
-        <input id="email" name="Email" type="text" />
+        <input id="email" name="Email" type="email" />
       </div>
       <div class="input-line">
-        <label for="country">Country:</label>
-        <input id="country" name="Country" type="text" />
+        <label for="state">State:</label>
+        <input id="state" name="State" type="text" list="state-list" />
+        <datalist id="state-list">
+          <option>New South Wales</option>
+          <option>Australian Capital Territory</option>
+          <option>Victoria</option>
+          <option>Queensland</option>
+          <option>South Australia</option>
+          <option>Western Australia</option>
+          <option>Tasmania</option>
+          <option>Northern Territory</option>
+        </datalist>
       </div>
       <div class="input-line">
         <label for="postal-code">Postal Code:</label>
-        <input id="postal-code" name="Postal Code" type="text" />
+        <input id="postal-code" name="Postal Code" type="number" />
       </div>
       <div class="input-line">
         <label for="password">Password:</label>
-        <input id="password" name="Password" type="text" />
+        <input id="password" name="Password" type="password" />
       </div>
       <div class="input-line">
         <label for="password-conf">Password Confirmation:</label>
-        <input id="password-conf" name="Password Confirmation" type="text" />
+        <input id="password-conf" name="Password Confirmation" type="password" />
       </div>
       <button type="submit">Submit</button>
     </form>
