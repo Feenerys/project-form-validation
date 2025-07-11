@@ -10,35 +10,40 @@
       <h1>Form</h1>
       <div class="input-line">
         <label for="email">Email:</label>
-        <input id="email" name="Email" type="email" />
+        <input id="email" name="Email" type="email" required />
       </div>
       <div class="input-line">
         <label for="state">State:</label>
-        <input id="state" name="State" type="text" list="state-list" />
-        <datalist id="state-list">
-          <option>New South Wales</option>
-          <option>Australian Capital Territory</option>
-          <option>Victoria</option>
-          <option>Queensland</option>
-          <option>South Australia</option>
-          <option>Western Australia</option>
-          <option>Tasmania</option>
-          <option>Northern Territory</option>
-        </datalist>
+        <select id="state" required>
+          <option value="nsw">New South Wales</option>
+          <option value="act">Australian Capital Territory</option>
+          <option value="vic">Victoria</option>
+          <option value="qld">Queensland</option>
+          <option value="sa">South Australia</option>
+          <option value="wa">Western Australia</option>
+          <option value="tas">Tasmania</option>
+          <option value="nt">Northern Territory</option>
+        </select>
       </div>
       <div class="input-line">
         <label for="postal-code">Postal Code:</label>
-        <input id="postal-code" name="Postal Code" type="number" />
+        <input id="postal-code" name="Postal Code" type="text" required />
       </div>
       <div class="input-line">
         <label for="password">Password:</label>
-        <input id="password" name="Password" type="password" />
+        <input id="password" name="Password" type="password" required />
       </div>
       <div class="input-line">
         <label for="password-conf">Password Confirmation:</label>
-        <input id="password-conf" name="Password Confirmation" type="password" />
+        <input
+          id="password-conf"
+          name="Password Confirmation"
+          type="password"
+          required
+        />
       </div>
       <button type="submit">Submit</button>
+      <span class="error" aria-live="polite"></span>
     </form>
   </body>
 </html>
