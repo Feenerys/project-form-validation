@@ -1,0 +1,15 @@
+form {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  align-items: center;
+}
+
+.input-line {
+  display: grid;
+  grid-template-columns: 190px 300px;
+}
+
+button {
+  
+}
