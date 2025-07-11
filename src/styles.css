@@ -10,6 +10,6 @@ form {
   grid-template-columns: 190px 300px;
 }
 
-.invalid {
+.interact:invalid {
   border: red 2px solid;
 }

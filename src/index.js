@@ -21,14 +21,13 @@ const fillStatus = {
 };
 
 email.addEventListener("input", (event) => {
-  if (email.validity.typeMismatch) {
+  email.className = "interact";
+  if (email.validity.typeMismatch || email.value == "") {
     email.setCustomValidity("Expected a proper email");
     email.reportValidity();
-    email.className = "invalid";
     fillStatus.email[0] = false;
   } else {
     email.setCustomValidity("");
-    email.className = "";
     fillStatus.email[0] = true;
   }
 });
@@ -77,12 +76,11 @@ postalCodeField.addEventListener("input", (e) => {
   if (postCodeConstraint.test(postalCodeField.value)) {
     postalCodeField.setCustomValidity("");
     postalCodeField.reportValidity();
-    postalCodeField.className = "";
     fillStatus.postalCode[0] = true;
   } else {
     postalCodeField.setCustomValidity(postCodeConstraints[state.value][1]);
     postalCodeField.reportValidity();
-    postalCodeField.className = "invalid";
+    postalCodeField.className = "interact";
     fillStatus.postalCode[0] = false;
   }
 });
@@ -100,27 +98,24 @@ passwordConfirmation.addEventListener("input", (e) => {
     console.log(password.value, passwordConfirmation.value);
     passwordConfirmation.setCustomValidity("Both passwords must match");
     passwordConfirmation.reportValidity();
-    passwordConfirmation.className = "invalid";
+    passwordConfirmation.className = "interact";
     fillStatus.passwordConfirmation[0] = false;
   } else {
     fillStatus.passwordConfirmation[0] = true;
     passwordConfirmation.setCustomValidity("");
-    passwordConfirmation.className = "";
   }
 });
 
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
   for (let input in fillStatus) {
     const status = fillStatus[input];
     if (!status[0]) {
       error.textContent = status[1];
-      status[2].className = "invalid";
-      break;
-    } else {
-      status[2].className = "";
+      status[2].className = "interact";
+      return;
     }
   }
-  error.textContent = "";
-  console.log("submit successful");
-  e.preventDefault();
+
+  error.textContent = "Success";
 });
